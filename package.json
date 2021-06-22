@@ -1,0 +1,82 @@
+{
+  "name": "miller",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "serve -s build",
+    "start": "PORT=3000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "tslint --fix --project .",
+    "lint-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all lint lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/pickers": "^3.2.7",
+    "@tinymce/tinymce-react": "^3.3.2",
+    "@types/jest": "24.0.20",
+    "@types/node": "12.11.7",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@types/react-router": "^5.1.2",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/react-select": "^3.0.8",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "faker": "^5.5.3",
+    "lodash": "^4.17.15",
+    "react": "^16.11.0",
+    "react-app-polyfill": "^1.0.4",
+    "react-cookie": "^4.0.1",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "react-select": "^3.0.8",
+    "react-uid": "^2.2.0",
+    "typeface-roboto": "0.0.75",
+    "typescript": "3.6.4"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/faker": "^5.5.6",
+    "@types/lodash": "^4.14.149",
+    "@types/redux-logger": "^3.0.7",
+    "core-js": "^3.4.3",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "serve": "^11.2.0",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1"
+  }
+}
