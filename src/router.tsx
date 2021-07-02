@@ -1,8 +1,8 @@
-import history from "misc/history";
-import McApp from "components/mc-app";
-import Loader from "components/mc-linear";
-import React, { FC, lazy, Suspense } from "react";
-import { Route, Router, Switch, Redirect } from "react-router-dom";
+import history from 'misc/history';
+import McApp from 'components/mc-app';
+import Loader from 'components/mc-linear';
+import React, { FC, lazy, Suspense } from 'react';
+import { Route, Router, Switch, Redirect } from 'react-router-dom';
 
 const Wrapper: FC = () => {
   return (
@@ -13,7 +13,7 @@ const Wrapper: FC = () => {
             <Route
               exact
               path="/"
-              component={lazy(() => import("views/home"))}
+              component={lazy(() => import('views/home'))}
             />
             <Redirect to="/" />
           </Switch>

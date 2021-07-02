@@ -1,23 +1,22 @@
-import faker from "faker";
-import { McMillerNode, McMillerMode } from "components/mc-miller/typing";
+import faker from 'faker';
+import { McMillerNode, McMillerMode } from 'components/mc-miller/typing';
 
 const _cache: {
   [x: string]: {
-    count: number,
-    items: McMillerNode[],
-  },
+    count: number;
+    items: McMillerNode[];
+  };
 } = {};
 
 const _touch = (path: string) => ({
   mode: McMillerMode.Doc,
-  path: path + "/" + faker.system.commonFileName(),
+  path: path + '/' + faker.system.commonFileName(),
 });
 
 const _mkdir = (path: string) => ({
   mode: McMillerMode.Dir,
-  path: path + "/" + faker.random.word(),
+  path: path + '/' + faker.random.word(),
 });
-
 
 const _random = (path: string) => {
   const random = Math.floor(Math.random() * 10 + 1);
@@ -46,10 +45,7 @@ const request = (path: string, skip = 0): [McMillerNode[], number] => {
       items,
     };
   }
-  return [
-    _cache[path].items.slice(skip, skip + 10),
-    _cache[path].count,
-  ];
+  return [_cache[path].items.slice(skip, skip + 10), _cache[path].count];
 };
 
 export default request;

@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { LinearProgress, useTheme } from "@material-ui/core";
+import React, { FC } from 'react';
+import { LinearProgress, useTheme } from '@material-ui/core';
 
 export const McLinear: FC = () => {
   const theme = useTheme();
@@ -7,11 +7,11 @@ export const McLinear: FC = () => {
   return (
     <LinearProgress
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         right: 0,
         left: 0,
-        zIndex: theme.zIndex.modal + 1
+        zIndex: theme.zIndex.modal + 1,
       }}
     />
   );

@@ -1,9 +1,9 @@
-import { McMillerNode } from "../typing";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { McMillerNode } from '../typing';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 interface IData {
-  count: number,
-  items: McMillerNode[],
+  count: number;
+  items: McMillerNode[];
 }
 
 export const kInit: IData = {
@@ -11,10 +11,7 @@ export const kInit: IData = {
   items: [],
 };
 
-const useData = (path: string): [
-  IData,
-  Dispatch<SetStateAction<IData>>,
-] => {
+const useData = (path: string): [IData, Dispatch<SetStateAction<IData>>] => {
   const [data, setData] = useState(kInit);
   useEffect(() => setData(kInit), [path]);
   return [data, setData];

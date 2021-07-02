@@ -1,13 +1,11 @@
-import useData from "./useData";
-import McMillerContext from "../context";
-import { McMillerNode } from "../typing";
-import { useCallback, useContext } from "react";
+import useData from './useData';
+import McMillerContext from '../context';
+import { McMillerNode } from '../typing';
+import { useCallback, useContext } from 'react';
 
-const useRequest = (path: string): [
-  number,
-  McMillerNode[],
-  (skip?: number) => void,
-] => {
+const useRequest = (
+  path: string,
+): [number, McMillerNode[], (skip?: number) => void] => {
   const [data, setData] = useData(path);
   const { onRequest } = useContext(McMillerContext);
   const request = useCallback(
@@ -17,7 +15,8 @@ const useRequest = (path: string): [
         count,
         items: skip === 0 ? items : [...prev.items, ...items],
       }));
-    }, [path, setData, onRequest],
+    },
+    [path, setData, onRequest],
   );
   return [data.count, data.items, request];
 };

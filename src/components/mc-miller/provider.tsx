@@ -1,10 +1,10 @@
-import McMillerContext from "./context";
-import React, { FC, useEffect, useState } from "react";
-import { McMillerNode } from "./typing";
+import McMillerContext from './context';
+import React, { FC, useEffect, useState } from 'react';
+import { McMillerNode } from './typing';
 
 interface IProps {
-  onRequest: (path: string, skip: number) => [McMillerNode[], number],
-  onChanged: (paths: string[]) => void,
+  onRequest: (path: string, skip: number) => [McMillerNode[], number];
+  onChanged: (paths: string[]) => void;
 }
 
 const McMillerProvider: FC<IProps> = ({ children, onRequest, onChanged }) => {
@@ -21,7 +21,9 @@ const McMillerProvider: FC<IProps> = ({ children, onRequest, onChanged }) => {
         onRequest,
         setChecked,
       }}
-    >{children}</McMillerContext.Provider>
+    >
+      {children}
+    </McMillerContext.Provider>
   );
 };
 

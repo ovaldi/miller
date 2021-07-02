@@ -10,6 +10,6 @@ export enum McMillerStatus {
 }
 
 export interface McMillerNode {
-  path: string,
-  mode: McMillerMode,
+  path: string;
+  mode: McMillerMode;
 }

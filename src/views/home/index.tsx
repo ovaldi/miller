@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import request from "misc/request";
-import McBody from "components/mc-body";
-import McMiller from "components/mc-miller";
+import React, { FC } from 'react';
+import request from 'misc/request';
+import McBody from 'components/mc-body';
+import McMiller from 'components/mc-miller';
 
 const Home: FC = () => {
   return (

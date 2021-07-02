@@ -1,10 +1,10 @@
-import { createContext } from "react";
-import { McMillerNode } from "./typing";
+import { createContext } from 'react';
+import { McMillerNode } from './typing';
 
 export interface McMillerContextProps {
-  checked: string[],
-  onRequest: (path: string, skip: number) => [McMillerNode[], number],
-  setChecked: (list: string[]) => void,
+  checked: string[];
+  onRequest: (path: string, skip: number) => [McMillerNode[], number];
+  setChecked: (list: string[]) => void;
 }
 
 const McMillerContext = createContext<McMillerContextProps>({

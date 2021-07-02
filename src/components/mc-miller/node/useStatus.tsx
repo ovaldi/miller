@@ -1,12 +1,10 @@
-import { include } from "misc/path";
-import McFinderContext from "../context";
-import { useContext, useMemo } from "react";
-import { McMillerNode, McMillerStatus } from "../typing";
+import { include } from 'misc/path';
+import McMillerContext from '../context';
+import { useContext, useMemo } from 'react';
+import { McMillerNode, McMillerStatus } from '../typing';
 
-const useStatus = (
-  node: McMillerNode,
-): McMillerStatus => {
-  const { checked } = useContext(McFinderContext);
+const useStatus = (node: McMillerNode): McMillerStatus => {
+  const { checked } = useContext(McMillerContext);
 
   return useMemo(() => {
     if (checked.some(x => x === node.path)) {
